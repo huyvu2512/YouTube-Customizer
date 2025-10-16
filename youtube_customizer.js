@@ -1,5 +1,5 @@
-// File: youtube_customizer.js (Version 2.1)
-// Cải tiến selector và thêm log để gỡ lỗi.
+// File: youtube_customizer.js
+// Nội dung: Chứa toàn bộ chức năng thay đổi giao diện YouTube.
 
 (function() {
     'use strict';
