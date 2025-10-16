@@ -1,11 +1,11 @@
 # YouTube Customizer: Logo Premium & 4 Cột Video
 
 ![YouTube Customizer](https://img.shields.io/badge/YouTube-Customizer-red?style=for-the-badge&logo=youtube)
-![Version](https://img.shields.io/badge/Version-1.1-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge)
 
 **YouTube Customizer** là một userscript gọn nhẹ giúp bạn cá nhân hóa giao diện YouTube, mang đến một trải nghiệm xem gọn gàng và độc đáo hơn. Script cho phép thay đổi logo mặc định thành logo Premium và tùy chỉnh số cột video hiển thị trên trang chủ.
 
-<img width="1870" height="861" alt="Giao diện YouTube với Logo Premium và 4 cột video" src="https://github.com/user-attachments/assets/41329834-26f8-4c81-bac1-8c7b18e11853" />
+<img width="1870" height="861" alt="Giao diện YouTube với Logo Premium và 4 cột video" src="https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/screenshot.png" />
 
 ## 🚀 Tính năng
 - **Logo Premium**: Tự động thay đổi logo mặc định của YouTube thành logo "Premium" tinh tế.
@@ -19,7 +19,7 @@
 
 2. **Cài đặt script YouTube Customizer**:
    - Nhấn vào nút dưới đây để tự động cài đặt script vào Tampermonkey:
-   [![Cài đặt Script](https://img.shields.io/badge/Cài%20đặt-Script-blue?style=for-the-badge)](https://site2s.com/youtubecustom)
+     [![Cài đặt Script](https://img.shields.io/badge/Cài%20đặt-Script-blue?style=for-the-badge)](https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/tampermonkey.user.js)
 
 3. **Truy cập YouTube**:
    - Truy cập [YouTube](https://www.youtube.com/), tải lại trang và tận hưởng giao diện mới! 🎉
@@ -44,10 +44,12 @@
 
 ## 📜 Miễn trừ trách nhiệm
 Dự án này được tạo ra với mục đích nghiên cứu và học tập về tùy chỉnh giao diện web. Nếu có bất kỳ vấn đề nào liên quan đến bản quyền hoặc vi phạm, tôi sẵn sàng hợp tác để gỡ bỏ nội dung khi được yêu cầu. Vui lòng liên hệ qua Telegram: **[@HuyVu_Placeholder](https://t.me/HuyVu_Placeholder)**.
+
 **Lưu ý**: Tuyệt đối cấm mua bán hoặc sử dụng code cho mục đích thương mại.
 
 ## 👨‍💻 Tác giả
-- **Huy Vũ** ([@HuyVuGithub](https://github.com/HuyVuGithub))
+- **Huy Vũ** ([@huyvu2512](https://github.com/huyvu2512))
+
 ## 💖 Hỗ trợ
 Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
 
