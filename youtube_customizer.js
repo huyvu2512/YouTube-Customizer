@@ -27,20 +27,21 @@
     } else {
         addCustomStyles();
     }
+    
+// ----- MÃ THAY ĐỔI LOGO YOUTUBE PREMIUM -----
 
-    // ----- MÃ THAY ĐỔI LOGO YOUTUBE PREMIUM (PHIÊN BẢN SỬA LỖI) -----
-
-    if (window.trustedTypes && window.trustedTypes.createPolicy) {
-        if (!window.trustedTypes.defaultPolicy) {
-            const policy = window.trustedTypes.createPolicy('default', {
-                createHTML: (string) => string,
-                createScriptURL: (string) => string,
-                createScript: (string) => string,
+    // fix "TrustedError"
+    if (window.trustedTypes && trustedTypes.createPolicy) {
+        if (!trustedTypes.defaultPolicy) {
+            const passThroughFn = (x) => x;
+            trustedTypes.createPolicy('default', {
+                createHTML: passThroughFn,
+                createScriptURL: passThroughFn,
+                createScript: passThroughFn,
             });
-            window.trustedTypes.defaultPolicy = policy;
         }
     }
-
+    
     const modifyLogo = (logoContainer) => {
         // Kiểm tra xem logo đã được sửa đổi chưa để tránh chạy lại không cần thiết
         if (logoContainer.dataset.customized === 'true') return;
@@ -73,3 +74,4 @@
     });
 
 })();
+
