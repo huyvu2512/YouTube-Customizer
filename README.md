@@ -19,7 +19,7 @@
 
 2. **Cài đặt script YouTube Customizer**:
    - Nhấn vào nút dưới đây để tự động cài đặt script vào Tampermonkey:
-     [![Cài đặt Script](https://img.shields.io/badge/Cài%20đặt-Script-blue?style=for-the-badge)](https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/tampermonkey.user.js)
+     [![Cài đặt Script](https://img.shields.io/badge/Cài%20đặt-Script-blue?style=for-the-badge)](https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/youtube_customizer.js)
 
 3. **Truy cập YouTube**:
    - Truy cập [YouTube](https://www.youtube.com/), tải lại trang và tận hưởng giao diện mới! 🎉
@@ -43,7 +43,7 @@
 - **Khuyến cáo**: Sử dụng công cụ này một cách có trách nhiệm.
 
 ## 📜 Miễn trừ trách nhiệm
-Dự án này được tạo ra với mục đích nghiên cứu và học tập về tùy chỉnh giao diện web. Nếu có bất kỳ vấn đề nào liên quan đến bản quyền hoặc vi phạm, tôi sẵn sàng hợp tác để gỡ bỏ nội dung khi được yêu cầu. Vui lòng liên hệ qua Telegram: **[@HuyVu_Placeholder](https://t.me/HuyVu_Placeholder)**.
+Dự án này được tạo ra với mục đích nghiên cứu và học tập về tùy chỉnh giao diện web. Nếu có bất kỳ vấn đề nào liên quan đến bản quyền hoặc vi phạm, tôi sẵn sàng hợp tác để gỡ bỏ nội dung khi được yêu cầu. Vui lòng liên hệ qua Contact: **[Huy Vũ](https://beacons.ai/huyvu2512)**.
 
 **Lưu ý**: Tuyệt đối cấm mua bán hoặc sử dụng code cho mục đích thương mại.
 
@@ -54,3 +54,4 @@ Dự án này được tạo ra với mục đích nghiên cứu và học tập
 Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
 
 **Từ khóa**: youtube customizer, youtube premium logo, youtube columns, tampermonkey script, userscript, tùy chỉnh youtube, thay đổi giao diện youtube.
+
