@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube: Logo Premium & 4 Cột Video
 // @namespace    http://tampermonkey.net/
-// @version      2.1
+// @version      1.0
 // @description  Thay đổi logo YouTube thành Premium và tùy chỉnh số cột video thành 4.
 // @author       Huy Vũ
 // @match        https://www.youtube.com/*
