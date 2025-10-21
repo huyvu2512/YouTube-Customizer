@@ -35,13 +35,15 @@ Dự án này được tạo ra với mục đích nghiên cứu và học tập
 
 **Lưu ý**: Tuyệt đối cấm mua bán hoặc sử dụng code cho mục đích thương mại.
 
-## 👨‍💻 Tác giả
-- **Huy Vũ** ([@huyvu2512](https://github.com/huyvu2512))
+## ❤️ Ủng Hộ Tác Giả
 
-## 💖 Hỗ trợ
-Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
+Nếu bạn thấy công cụ này hữu ích, hãy cân nhắc ủng hộ để tác giả có thêm động lực phát triển các dự án mới.
+
+-   **Tác giả**: [Huy Vũ](https://beacons.ai/huyvu2512)
+-   Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
 
 **Từ khóa**: youtube customizer, youtube premium logo, youtube columns, tampermonkey script, userscript, tùy chỉnh youtube, thay đổi giao diện youtube.
+
 
 
 
