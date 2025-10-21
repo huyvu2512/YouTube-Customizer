@@ -5,7 +5,7 @@
 
 **YouTube Customizer** là một userscript gọn nhẹ giúp bạn cá nhân hóa giao diện YouTube, mang đến một trải nghiệm xem gọn gàng và độc đáo hơn. Script cho phép thay đổi logo mặc định thành logo Premium và tùy chỉnh số cột video hiển thị trên trang chủ.
 
-<img width="1870" height="861" alt="Giao diện YouTube với Logo Premium và 4 cột video" src="https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/screenshot.png" />
+<img width="1870" height="861" alt="Giao diện YouTube với Logo Premium và 4 cột video" src="https://github.com/huyvu2512/YouTube-Customizer/issues/1#issue-3535516661" />
 
 ## 🚀 Tính năng
 - **Logo Premium**: Tự động thay đổi logo mặc định của YouTube thành logo "Premium" tinh tế.
@@ -55,6 +55,7 @@ Dự án này được tạo ra với mục đích nghiên cứu và học tập
 Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
 
 **Từ khóa**: youtube customizer, youtube premium logo, youtube columns, tampermonkey script, userscript, tùy chỉnh youtube, thay đổi giao diện youtube.
+
 
 
 
