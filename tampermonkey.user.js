@@ -8,6 +8,7 @@
 // @match        https://www.youtube.com/*
 // @run-at       document-start
 // @grant        none
-// @icon         https://raw.githubusercontent.com/huyvu2512/YouTube-Customizer/main/icon.png
+// @icon         https://github.com/user-attachments/assets/43f8e7e2-9b82-4db9-9935-183ee17a1895
 // ==/UserScript==
+
 
