@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         YouTube Premium Logo & 4 Columns
+// @name         YouTube Premium Logo & 4 Columns (Fixed)
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  Thay đổi logo YouTube thành Premium VÀ điều chỉnh lưới video hiển thị 4 cột.
-// @author       (Tách ra từ code của baopingsheng / zerodytrash)
+// @version      1.2
+// @description  Thay đổi logo YouTube thành Premium VÀ điều chỉnh lưới video hiển thị 4 cột (Đã sửa lỗi).
+// @author       (Gộp bởi Đối tác lập trình)
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
@@ -13,8 +13,7 @@
     'use strict';
 
     // --- PHẦN 1: ĐIỀU CHỈNH 4 CỘT VIDEO ---
-    // Chúng ta không dùng GM_addStyle để giữ @grant none (cần cho code logo)
-    // Thay vào đó, chúng ta tự chèn thẻ <style> vào trang.
+    // Hàm này tạo và chèn thẻ <style>
     function addColumnStyles() {
         const style = document.createElement('style');
         style.type = 'text/css';
@@ -27,14 +26,22 @@
         document.head.appendChild(style);
     }
 
-    // Chạy hàm thêm style ngay khi có thể
-    // (Vì @run-at là document-start, document.head đã tồn tại)
-    addColumnStyles();
+    // *** SỬA LỖI: ***
+    // Chúng ta không chạy addColumnStyles() ngay lập tức.
+    // Thay vào đó, chúng ta đợi cho đến khi DOM (cấu trúc trang) sẵn sàng.
+    if (document.readyState === 'loading') {
+        // Trang vẫn đang tải, đợi sự kiện DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', addColumnStyles);
+    } else {
+        // Trang đã tải xong (hoặc gần xong), chạy ngay
+        addColumnStyles();
+    }
 
 
     // --- PHẦN 2: LOGO PREMIUM ---
+    // (Phần này giữ nguyên, nó sẽ chạy sau khi trang tải đầy đủ qua sự kiện 'load')
 
-    // fix "TrustedError" on chrome[-ium], code snippet from zerodytrash/Simple-YouTube-Age-Restriction-Bypass@d2cbcc0
+    // fix "TrustedError" on chrome[-ium]
     if (window.trustedTypes && trustedTypes.createPolicy) {
         if (!trustedTypes.defaultPolicy) {
             const passThroughFn = (x) => x;
@@ -46,8 +53,7 @@
         }
     }
 
-    // Thêm sự kiện 'load' để chỉ chạy MutationObserver khi web đã tải xong
-    // (Code logo sẽ chờ trang tải xong, trong khi code style cột chạy ngay)
+    // Thêm sự kiện 'load' (chạy sau DOMContentLoaded)
     window.addEventListener('load', () => {
         // Hàm được gọi khi tìm thấy phần tử logo
         function modifyYtIcon(ytdLogos) {
@@ -63,40 +69,34 @@
             });
 
             // Ngắt kết nối observer khi đã tìm thấy và thay đổi logo
-            observer.disconnect();
+            if (observer) observer.disconnect();
         }
+
+        let observer; // Khai báo observer ở đây để có thể truy cập trong hàm modifyYtIcon
 
         // Hàm kiểm tra sự tồn tại của logo và gọi hàm thay đổi
         function checkYtIconExistence() {
-            // Tìm phần tử logo
             let ytdLogos = document.querySelectorAll("ytd-logo > yt-icon > span > div");
-            // Tìm nút avatar (để kiểm tra đã đăng nhập)
             const pfp = document.querySelector("#avatar-btn");
-            // Tìm nút đăng nhập (để kiểm tra chưa đăng nhập)
             const signInBtn = document.querySelector("a[href^='https://accounts.google.com']");
 
-            // Chỉ thay đổi logo nếu người dùng đã đăng nhập (tìm thấy avatar)
             if (pfp && ytdLogos.length == 4) {
-                // Chạy trong chu kỳ sự kiện tiếp theo để đảm bảo logo được tải đầy đủ
                 setTimeout(() => {
-                    // Lấy lại phần tử logo phòng trường hợp YouTube thay đổi
                     ytdLogos = document.querySelectorAll("ytd-logo > yt-icon > span > div");
                     modifyYtIcon(ytdLogos);
                 }, 50)
             } else if (signInBtn) {
-                // Không áp dụng logo premium cho người dùng chưa đăng nhập
-                // và ngắt kết nối observer
-                observer.disconnect();
+                if (observer) observer.disconnect();
             };
         }
 
-        // Quan sát các thay đổi trong DOM (cấu trúc trang)
-        const observer = new MutationObserver(checkYtIconExistence);
+        // Quan sát các thay đổi trong DOM
+        observer = new MutationObserver(checkYtIconExistence);
 
         // Bắt đầu quan sát toàn bộ trang
         observer.observe(document.body, {childList: true, subtree: true});
 
-        // Gọi hàm kiểm tra một lần lúc đầu phòng trường hợp logo đã có sẵn
+        // Gọi hàm kiểm tra một lần lúc đầu
         checkYtIconExistence();
     });
 })();
