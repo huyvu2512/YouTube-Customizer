@@ -8,8 +8,9 @@
 // @match        https://www.youtube.com/*
 // @run-at       document-start
 // @grant        none
-// @icon         https://avatars.githubusercontent.com/u/171955299?s=400&u=5d3116c9bbd9ec536c0a313958a627fba3060f15&v=4
+// @icon         https://github.com/user-attachments/assets/b4d5a076-6baf-47eb-8c6f-ea2ea8258168
 // ==/UserScript==
+
 
 
 
