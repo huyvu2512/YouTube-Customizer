@@ -26,19 +26,6 @@
    - Truy cập [YouTube](https://www.youtube.com/), tải lại trang và tận hưởng giao diện mới! 🎉
 
 ---
-
-## ⚠️ Giải thích Kỹ thuật & Cam kết (Quan trọng)
-
-Để đảm bảo sự minh bạch, tôi cam kết dự án này phi lợi nhuận và phục vụ mục đích học tập.
-
-1.  **Về Mã nguồn (Source Code):**
-    * Mã nguồn được cung cấp ở dạng **dễ đọc, không mã hóa (no obfuscation)**. Mục đích là để đảm bảo tính minh bạch, cho phép bất kỳ ai cũng có thể xem, kiểm tra và hiểu cách hoạt động của script.
-    * Script chỉ thực hiện các thay đổi về giao diện (CSS) và **không can thiệp vào trình phát video hay dữ liệu người dùng**.
-
-2.  **Về Quyền riêng tư:**
-    * **CAM KẾT:** Script này **KHÔNG** thu thập bất kỳ dữ liệu cá nhân, lịch sử duyệt web hay thông tin tài khoản nào của người dùng. Mọi hoạt động chỉ diễn ra cục bộ trên trình duyệt của bạn.
-
----
 ## ⚠️ Lưu ý quan trọng
 - **Credit**: Vui lòng ghi rõ nguồn nếu bạn chia sẻ hoặc chỉnh sửa code này.
 - **Khuyến cáo**: Sử dụng công cụ này một cách có trách nhiệm.
@@ -55,6 +42,7 @@ Dự án này được tạo ra với mục đích nghiên cứu và học tập
 Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub để ủng hộ mình nhé!
 
 **Từ khóa**: youtube customizer, youtube premium logo, youtube columns, tampermonkey script, userscript, tùy chỉnh youtube, thay đổi giao diện youtube.
+
 
 
 
