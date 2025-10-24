@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Premium Logo & 4 Columns (Fixed)
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.2
 // @description  Thay đổi logo YouTube thành Premium VÀ điều chỉnh lưới video hiển thị 4 cột (Đã sửa lỗi).
 // @author       (Gộp bởi Đối tác lập trình)
 // @match        https://www.youtube.com/*
@@ -100,3 +100,4 @@
         checkYtIconExistence();
     });
 })();
+
