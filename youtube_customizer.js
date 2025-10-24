@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         YouTube Premium Logo & 4 Columns (Fixed)
 // @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Thay đổi logo YouTube thành Premium VÀ điều chỉnh lưới video hiển thị 4 cột (Đã sửa lỗi).
-// @author       (Gộp bởi Đối tác lập trình)
+// @version      1.0
+// @description  Thay đổi logo YouTube thành Premium VÀ điều chỉnh lưới video hiển thị 4 cột (Đã sửa lỗi cuộn trang).
+// @author       (Gộp bởi Đối tác lập trình, sửa lỗi bởi Gemini)
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
@@ -55,9 +55,36 @@
 
     // Thêm sự kiện 'load' (chạy sau DOMContentLoaded)
     window.addEventListener('load', () => {
+
+        // =================================================================
+        // HÀM ĐÃ ĐƯỢC SỬA LỖI (BẮT ĐẦU)
+        // =================================================================
+        
         // Hàm được gọi khi tìm thấy phần tử logo
         function modifyYtIcon(ytdLogos) {
             ytdLogos.forEach(ytdLogo => {
+
+                // --- BẮT ĐẦU SỬA LỖI CUỘN TRANG ---
+                // Tìm thẻ <a> cha (link) bao quanh logo
+                const logoLink = ytdLogo.closest('a');
+
+                // Nếu tìm thấy thẻ link, thêm sự kiện click
+                if (logoLink) {
+                    // Thêm cờ để đảm bảo sự kiện chỉ được thêm một lần
+                    if (!logoLink.dataset.scrollFixAdded) { 
+                        logoLink.dataset.scrollFixAdded = 'true'; // Đánh dấu là đã thêm
+                        logoLink.addEventListener('click', (e) => {
+                            // Chỉ thực thi khi đây là click chuột trái bình thường (không phải Ctrl+click hay chuột giữa)
+                            if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                                // Buộc cuộn về đầu trang
+                                window.scrollTo(0, 0);
+                            }
+                            // Không dùng e.preventDefault() để link vẫn điều hướng bình thường
+                        });
+                    }
+                }
+                // --- KẾT THÚC SỬA LỖI CUỘN TRANG ---
+
                 const ytdLogoSvg = ytdLogo.querySelector("svg");
                 // Thay đổi thuộc tính SVG để vừa với logo Premium
                 ytdLogoSvg.setAttribute('width', '101');
@@ -69,24 +96,31 @@
             });
 
             // Ngắt kết nối observer khi đã tìm thấy và thay đổi logo
-            if (observer) observer.disconnect();
+            // Chúng ta không ngắt kết nối ở đây nữa để nó có thể xử lý các logo tải động (ví dụ: khi điều hướng)
+            // if (observer) observer.disconnect();
         }
+        
+        // =================================================================
+        // HÀM ĐÃ ĐƯỢC SỬA LỖI (KẾT THÚC)
+        // =================================================================
+
 
         let observer; // Khai báo observer ở đây để có thể truy cập trong hàm modifyYtIcon
 
         // Hàm kiểm tra sự tồn tại của logo và gọi hàm thay đổi
         function checkYtIconExistence() {
-            let ytdLogos = document.querySelectorAll("ytd-logo > yt-icon > span > div");
+            // Sửa selector để chính xác hơn và chỉ nhắm vào logo trên thanh header
+            let ytdLogos = document.querySelectorAll("ytd-topbar-logo-renderer ytd-logo > yt-icon > span > div");
             const pfp = document.querySelector("#avatar-btn");
             const signInBtn = document.querySelector("a[href^='https://accounts.google.com']");
 
-            if (pfp && ytdLogos.length == 4) {
-                setTimeout(() => {
-                    ytdLogos = document.querySelectorAll("ytd-logo > yt-icon > span > div");
-                    modifyYtIcon(ytdLogos);
-                }, 50)
-            } else if (signInBtn) {
-                if (observer) observer.disconnect();
+            // Chỉ chạy khi có logo và đã đăng nhập (có ảnh đại diện)
+            if (pfp && ytdLogos.length > 0) {
+                // Chúng ta không cần setTimeout nữa, MutationObserver đã xử lý việc này
+                modifyYtIcon(ytdLogos);
+            } else if (signInBtn && ytdLogos.length > 0) {
+                 // Xử lý cả khi chưa đăng nhập (có nút sign in)
+                 modifyYtIcon(ytdLogos);
             };
         }
 
